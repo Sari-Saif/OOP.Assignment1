@@ -1,6 +1,7 @@
 package observer;
 
-public interface Sender {
+public interface Sender
+{
     //methods to register and unregister observers
     void register(Member obj);
     void unregister(Member obj);
