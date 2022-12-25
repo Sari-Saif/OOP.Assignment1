@@ -5,7 +5,6 @@ public class Main
 {
     public static void main(String [] args)
     {
-
         // in our main we test all
         // we want not in format of Junit :)
         GroupAdmin ga = new GroupAdmin();
@@ -18,6 +17,13 @@ public class Main
         ga.register(guest_2);
 
         ga.append("heyyyyyyyyyyyyyyy");
+
+        System.out.println(guest_0.get_usb());
+        System.out.println(guest_1.get_usb());
+        System.out.println(guest_2.get_usb());
+
+        ga.unregister(guest_0);
+        ga.append("1");
 
         System.out.println(guest_0.get_usb());
         System.out.println(guest_1.get_usb());
