@@ -12,7 +12,13 @@ public class UndoableStringBuilder implements IUndoableStringBuilder
     {
         this._str = new StringBuilder();
         this._stack = new Stack<String>();
+    }
 
+    // updated
+    public UndoableStringBuilder(UndoableStringBuilder o)
+    {
+        this._str = new StringBuilder(o._str);
+        this._stack = o._stack;
     }
 
     @Override

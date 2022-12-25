@@ -23,6 +23,7 @@ public class Main
         System.out.println(guest_2.get_usb());
 
         ga.unregister(guest_0);
+        ga.unregister(guest_2);
         ga.append("1");
 
         System.out.println(guest_0.get_usb());

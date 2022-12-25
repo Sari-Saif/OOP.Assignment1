@@ -57,7 +57,7 @@ public class GroupAdmin  implements Sender
     {
         for(int i=0; i< this._members.size(); i++)
         {
-            this._members.get(i).update(this._usb);
+            this._members.get(i).update(new UndoableStringBuilder(this._usb));
         }
     }
 }
