@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GroupAdminTest {
-
+class GroupAdminTest
+{
     @Test
     void register()
     {
@@ -52,15 +52,28 @@ class GroupAdminTest {
     @Test
     void insert()
     {
+        GroupAdmin leader = new GroupAdmin();
+        ConcreteMember new_solder = new ConcreteMember();
+        ConcreteMember new_solder1 = new ConcreteMember();
+        ConcreteMember new_solder0 = new ConcreteMember();
+
+        leader.register(new_solder);
+        leader.register(new_solder0);
+        leader.register(new_solder1);
+
+        leader.insert(0,"every one to gather around me !!");
+        assertEquals("every one to gather around me !!",new_solder.get_usb().toString());
+        assertEquals("every one to gather around me !!",new_solder0.get_usb().toString());
+        assertEquals("every one to gather around me !!",new_solder1.get_usb().toString());
 
 
+        String check = " soldier number one died !!! ";
+        leader.insert(31,check);
+        leader.unregister(new_solder1);
 
-
-
-
-
-
-
+        assertEquals("every one to gather around me ! soldier number one died !!! !",new_solder.get_usb().toString());
+        assertEquals("every one to gather around me ! soldier number one died !!! !",new_solder0.get_usb().toString());
+        assertNotEquals("every one to gather around me !!",new_solder1.get_usb().toString());
     }
 
     @Test
@@ -80,11 +93,12 @@ class GroupAdminTest {
         assertEquals("every one listen to me !! ",new_solder0.get_usb().toString());
         assertEquals("every one listen to me !! ",new_solder1.get_usb().toString());
 
+        leader.unregister(new_solder1);
         String check = "to be or not to be ";
         leader.append(check);
         assertEquals("every one listen to me !! to be or not to be ",new_solder.get_usb().toString());
         assertEquals("every one listen to me !! to be or not to be ",new_solder0.get_usb().toString());
-        assertEquals("every one listen to me !! to be or not to be ",new_solder1.get_usb().toString());
+        assertNotEquals("every one listen to me !! to be or not to be ",new_solder1.get_usb().toString());
 
     }
 
