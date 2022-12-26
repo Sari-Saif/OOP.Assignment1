@@ -220,6 +220,11 @@ public class BulletinSystem
         System.out.println("Your account was created");
     }
 
+    /**
+     * function ask user to choose an older account,
+     * and then it unregister the account and then remove it
+     * from the list that hold it before.
+     */
     private void deleteAccountHandler()
     {
         int choice = 0;
