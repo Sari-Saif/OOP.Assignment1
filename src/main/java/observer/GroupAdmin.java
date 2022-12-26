@@ -16,13 +16,19 @@ public class GroupAdmin  implements Sender
     @Override
     public void register(Member newMember)
     {
-        this._members.add(newMember);
+        if(!this._members.contains(newMember))
+        {
+            this._members.add(newMember);
+        }
     }
 
     @Override
     public void unregister(Member oldMmber)
     {
-        this._members.remove(oldMmber);
+        if(this._members.contains(oldMmber))
+        {
+            this._members.remove(oldMmber);
+        }
     }
 
     @Override
