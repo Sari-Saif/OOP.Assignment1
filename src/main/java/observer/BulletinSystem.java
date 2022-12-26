@@ -107,13 +107,14 @@ public class BulletinSystem
                 // TODO: insert
                 break;
             case 2:
-                // TODO: appdate
+                System.out.print("Enter string to append: ");
+                this._bulletin.append(this._sc.nextLine());
                 break;
             case 3:
                 // TODO: Delete
                 break;
             case 4:
-                // TODO: Undo
+                this._bulletin.undo();
                 break;
             default:
                 break;

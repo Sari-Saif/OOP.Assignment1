@@ -16,19 +16,17 @@ class GroupAdminTest {
            ConcreteMember newmember = new ConcreteMember();
            admin.register(newmember);
       }
-        for (:
-             ) {
-            
-        }
-
-
-
-
-
-
-
 
     }
+
+
+
+
+
+
+
+
+
 
     @Test
     void unregister() {
