@@ -49,6 +49,13 @@ git clone https://github.com/SariSafe/OOP.Assignment1.git
 After clone need to open it by IDE and run the main... have fun !!!
 ````
 
+## Languages and Tools
+
+ <div align="center">
+  <code><img height="40" width="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
+ <code><img height="40" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/1024px-IntelliJ_IDEA_Icon.svg.png"></code>
+ <code><img height="40" width="40" src="https://drawio-app.com/wp-content/uploads/2021/05/drawio_logo_RGB_symbol_large.png"></code>
+  </div>
 
 
 
