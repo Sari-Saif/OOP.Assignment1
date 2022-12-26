@@ -1,6 +1,6 @@
 # Bulletin System
  <p align="center">
-<img src="photo.jpeg" width="35%"/>
+<img src="photo_1.png" width="50%"/>
 </p>
 
 
