@@ -23,8 +23,12 @@ There are tow links we used to understand the Observer Design Pattern:
 - [YouTube](https://www.youtube.com/watch?v=_BpmfnqjgzQ)
 
 ## System Review:
+<p align="center">
+<img src="photo.jpeg" width="30%"/>
+</p>
+
+
 The program have a few abilities :
-==================================
 1. Change Bulletin
 2. View Bulletin
 3. Create Account
@@ -33,9 +37,8 @@ The program have a few abilities :
 6. Unregister the account
 7. Print all accounts
 8. Exit
-<p align="center">
-<img src="!(https://user-images.githubusercontent.com/98646866/209580499-3cb777c2-484c-484f-9a04-41233c8584a5.jpeg)"/>
-</p>
 
 
-![UML_Bulletin](https://user-images.githubusercontent.com/98646866/209549218-75eac602-6b5e-47c9-a526-1eb6f593878c.png)
+
+
+
