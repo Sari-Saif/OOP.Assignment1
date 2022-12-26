@@ -70,7 +70,7 @@ public class BulletinSystem
 
     private int printMainMenu()
     {
-        int choice = 1;
+        int choice = 0;
 
         do
         {
@@ -99,7 +99,41 @@ public class BulletinSystem
 
     private void changeBulletinHandler()
     {
-        // TODO: main for insert, append, delete and undo.
+        int choice = printChangeOptions();
+
+        switch (choice)
+        {
+            case 1:
+                // TODO: insert
+                break;
+            case 2:
+                // TODO: appdate
+                break;
+            case 3:
+                // TODO: Delete
+                break;
+            case 4:
+                // TODO: Undo
+                break;
+            default:
+                break;
+        }
+    }
+
+    private int printChangeOptions()
+    {
+        int choice = 0;
+        System.out.println("1. Insert");
+        System.out.println("2. Appned");
+        System.out.println("3. Delete");
+        System.out.println("4. Undo");
+        System.out.println("Other number for cancel..");
+        System.out.print("Enter your choice: ");
+
+        choice = this._sc.nextInt();
+        this._sc.nextLine();
+
+        return choice;
     }
 
     private void viewBulletin()
