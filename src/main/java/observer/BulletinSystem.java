@@ -30,6 +30,9 @@ public class BulletinSystem
 
     private ConcreteMember _current;
 
+    /**
+     * C'TOR
+     */
     BulletinSystem()
     {
         this._sc = new Scanner(System.in);
@@ -40,6 +43,11 @@ public class BulletinSystem
         this._bulletin.register(this._current);
     }
 
+    /**
+     * This is the main loop of the sysrem.
+     * It starts with the main menu inside loop
+     * until the user type Exit.
+     */
     public void start()
     {
         int choice = 0;
@@ -79,6 +87,11 @@ public class BulletinSystem
         }while(choice != EXIT);
     }
 
+    /**
+     * prints the main menu and ask
+     * user to choose an option
+     * @return a valid integer choice
+     */
     private int printMainMenu()
     {
         int choice = 0;
@@ -107,7 +120,11 @@ public class BulletinSystem
         return choice;
     }
 
-
+    /**
+     * func handler the changing of bulletin.
+     * there is 4 types of change: insert, append, delete & undo.
+     * So, user choose an option, and then the right action running.
+     */
     private void changeBulletinHandler()
     {
         int choice = printChangeOptions();
@@ -142,6 +159,12 @@ public class BulletinSystem
         }
     }
 
+    /**
+     * function represent the 4 options of
+     * changing buletin, and ask user to
+     * choose one of them.
+     * @return option type integer
+     */
     private int printChangeOptions()
     {
         int choice = 0;
@@ -158,11 +181,20 @@ public class BulletinSystem
         return choice;
     }
 
+    /**
+     * function prints the bulletin string.
+     */
     private void viewBulletin()
     {
         System.out.println("Current state: " + this._current.get_usb());
     }
 
+    /**
+     * function create new account,
+     * and append it to list of accounts.
+     * User asked to type new name, until
+     * it's new name.
+     */
     private void createAccountHandler()
     {
         String name;
@@ -188,6 +220,11 @@ public class BulletinSystem
         System.out.println("Your account was created");
     }
 
+    /**
+     * function ask user to choose an older account,
+     * and then it unregister the account and then remove it
+     * from the list that hold it before.
+     */
     private void deleteAccountHandler()
     {
         int choice = 0;
