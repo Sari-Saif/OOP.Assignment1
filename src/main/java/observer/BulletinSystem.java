@@ -189,6 +189,12 @@ public class BulletinSystem
         System.out.println("Current state: " + this._current.get_usb());
     }
 
+    /**
+     * function create new account,
+     * and append it to list of accounts.
+     * User asked to type new name, until
+     * it's new name.
+     */
     private void createAccountHandler()
     {
         String name;
