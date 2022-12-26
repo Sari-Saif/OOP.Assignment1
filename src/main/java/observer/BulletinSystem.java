@@ -30,6 +30,9 @@ public class BulletinSystem
 
     private ConcreteMember _current;
 
+    /**
+     * C'TOR
+     */
     BulletinSystem()
     {
         this._sc = new Scanner(System.in);
@@ -40,6 +43,11 @@ public class BulletinSystem
         this._bulletin.register(this._current);
     }
 
+    /**
+     * This is the main loop of the sysrem.
+     * It starts with the main menu inside loop
+     * until the user type Exit.
+     */
     public void start()
     {
         int choice = 0;
@@ -79,6 +87,11 @@ public class BulletinSystem
         }while(choice != EXIT);
     }
 
+    /**
+     * prints the main menu and ask
+     * user to choose an option
+     * @return a valid integer choice
+     */
     private int printMainMenu()
     {
         int choice = 0;
