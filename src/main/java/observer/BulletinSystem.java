@@ -1,7 +1,9 @@
 package observer;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class BulletinSystem
 {
@@ -23,7 +25,8 @@ public class BulletinSystem
 
     private Scanner _sc;
     private GroupAdmin _bulletin;
-    private ArrayList<ConcreteMember> _people;
+    private ArrayList<Account> _Accounts;
+    private Set<String> _accountNames;
 
     private ConcreteMember _current;
 
@@ -31,7 +34,8 @@ public class BulletinSystem
     {
         this._sc = new Scanner(System.in);
         this._bulletin = new GroupAdmin();
-        this._people = new ArrayList<ConcreteMember>();
+        this._Accounts = new ArrayList<Account>();
+        this._accountNames = new HashSet<String>();
         this._current = new ConcreteMember();
         this._bulletin.register(this._current);
     }
@@ -54,19 +58,19 @@ public class BulletinSystem
                     viewBulletin();
                     break;
                 case CREATE_ACCOUNT:
-                    // TODO
+                    createAccountHandler();
                     break;
                 case DELETE_ACCOUNT:
                     // TODO
                     break;
                 case SUBSCRIBE:
-                    // TODO
+                    subscribeHandler();
                     break;
                 case UNSUBSCRIBE:
                     // TODO
                     break;
                 case PRINT_ACCOUNTS:
-                    // TODO
+                    printAllAccounts();
                     break;
                 case EXIT:
                     System.out.println("Bye bye :)");
@@ -158,5 +162,68 @@ public class BulletinSystem
     private void viewBulletin()
     {
         System.out.println("Current state: " + this._current.get_usb());
+    }
+
+    private void createAccountHandler()
+    {
+        String name;
+        boolean tryAgain = false;
+
+        do
+        {
+            tryAgain = false;
+            System.out.print("Enter new account name: ");
+            name = this._sc.nextLine();
+
+            if(this._accountNames.contains(name))
+            {
+                System.out.println("Account name is exist.. try again!");
+                tryAgain = true;
+            }
+        }
+        while(tryAgain);
+
+        this._accountNames.add(name);
+        this._Accounts.add(new Account(name));
+
+        System.out.println("Your account was created");
+    }
+
+
+    private void subscribeHandler()
+    {
+        int choice = 0;
+        int numOfAccounts = this._Accounts.size();
+
+        if(numOfAccounts == 0)
+        {
+            System.out.println("No accounts to subscibe...");
+        }
+
+        printAllAccounts();
+        do
+        {
+            System.out.print("Enter Account number to subscribe: ");
+            choice = this._sc.nextInt();
+            this._sc.nextLine();
+
+            if(choice < 0 || choice > numOfAccounts)
+            {
+                System.out.println("Invalid account... try again!");
+            }
+        }while (choice < 0 || choice > numOfAccounts);
+
+        this._bulletin.register(this._Accounts.get(choice-1));
+    }
+
+
+    private void printAllAccounts()
+    {
+        int numOfAccounts = this._Accounts.size();
+        for(int i = 0; i < numOfAccounts; i++)
+        {
+            Account curr = this._Accounts.get(i);
+            System.out.println((i+1) + ". " + curr.get_name() + ": " + curr.get_usb());
+        }
     }
 }
