@@ -120,7 +120,6 @@ public class BulletinSystem
         return choice;
     }
 
-
     /**
      * func handler the changing of bulletin.
      * there is 4 types of change: insert, append, delete & undo.
@@ -160,6 +159,12 @@ public class BulletinSystem
         }
     }
 
+    /**
+     * function represent the 4 options of
+     * changing buletin, and ask user to
+     * choose one of them.
+     * @return option type integer
+     */
     private int printChangeOptions()
     {
         int choice = 0;
