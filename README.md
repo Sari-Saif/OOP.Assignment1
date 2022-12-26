@@ -25,8 +25,8 @@ There are tow links we used to understand the Observer Design Pattern:
 - [Wikipidea](https://en.wikipedia.org/wiki/Observer_pattern)
 - [YouTube](https://www.youtube.com/watch?v=_BpmfnqjgzQ)
 
-## System Review:
-The program have a few abilities :
+## System Review
+With this program you can preform the below:
 1. Change Bulletin
 2. View Bulletin
 3. Create Account
@@ -35,6 +35,13 @@ The program have a few abilities :
 6. Unregister the account
 7. Print all accounts
 8. Exit
+
+## UML:
+- blue - is the Observer Design Pattern classes
+- green - the class that belong to Bulletin System
+ <p align="center">
+<img src="UML_Bulletin.png"/>
+</p>
 
 
 
