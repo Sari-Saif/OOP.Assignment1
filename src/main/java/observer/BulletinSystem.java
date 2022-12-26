@@ -42,7 +42,6 @@ public class BulletinSystem
 
     public void start()
     {
-        // TODO: big while with switch case
         int choice = 0;
 
         do
@@ -67,7 +66,7 @@ public class BulletinSystem
                     subscribeHandler();
                     break;
                 case UNSUBSCRIBE:
-                    // TODO
+                    unsubscribeHandler();
                     break;
                 case PRINT_ACCOUNTS:
                     printAllAccounts();
@@ -198,6 +197,7 @@ public class BulletinSystem
         if(numOfAccounts == 0)
         {
             System.out.println("No accounts to subscibe...");
+            return;
         }
 
         printAllAccounts();
@@ -214,6 +214,34 @@ public class BulletinSystem
         }while (choice < 0 || choice > numOfAccounts);
 
         this._bulletin.register(this._Accounts.get(choice-1));
+    }
+
+
+    private void unsubscribeHandler()
+    {
+        int choice = 0;
+        int numOfAccounts = this._Accounts.size();
+
+        if(numOfAccounts == 0)
+        {
+            System.out.println("No accounts to unsubscibe...");
+            return;
+        }
+
+        printAllAccounts();
+        do
+        {
+            System.out.print("Enter Account number to unsubscribe: ");
+            choice = this._sc.nextInt();
+            this._sc.nextLine();
+
+            if(choice < 0 || choice > numOfAccounts)
+            {
+                System.out.println("Invalid account... try again!");
+            }
+        }while (choice < 0 || choice > numOfAccounts);
+
+        this._bulletin.unregister(this._Accounts.get(choice-1));
     }
 
 
