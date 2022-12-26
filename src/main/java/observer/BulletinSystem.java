@@ -121,6 +121,11 @@ public class BulletinSystem
     }
 
 
+    /**
+     * func handler the changing of bulletin.
+     * there is 4 types of change: insert, append, delete & undo.
+     * So, user choose an option, and then the right action running.
+     */
     private void changeBulletinHandler()
     {
         int choice = printChangeOptions();
