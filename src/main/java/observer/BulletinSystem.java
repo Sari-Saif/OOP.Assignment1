@@ -60,7 +60,7 @@ public class BulletinSystem
                     createAccountHandler();
                     break;
                 case DELETE_ACCOUNT:
-                    // TODO
+                    deleteAccountHandler();
                     break;
                 case SUBSCRIBE:
                     subscribeHandler();
@@ -186,6 +186,36 @@ public class BulletinSystem
         this._Accounts.add(new Account(name));
 
         System.out.println("Your account was created");
+    }
+
+    private void deleteAccountHandler()
+    {
+        int choice = 0;
+        int numOfAccounts = this._Accounts.size();
+
+        if(numOfAccounts == 0)
+        {
+            System.out.println("No accounts to delete...");
+            return;
+        }
+
+        printAllAccounts();
+        do
+        {
+            System.out.print("Enter Account number to delete: ");
+            choice = this._sc.nextInt();
+            this._sc.nextLine();
+
+            if(choice < 0 || choice > numOfAccounts)
+            {
+                System.out.println("Invalid account... try again!");
+            }
+        }while (choice < 0 || choice > numOfAccounts);
+
+
+        Account accountToDelete = this._Accounts.get(choice-1);
+        this._bulletin.unregister(accountToDelete);
+        this._Accounts.remove(accountToDelete);
     }
 
 
