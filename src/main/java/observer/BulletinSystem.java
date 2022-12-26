@@ -324,6 +324,11 @@ public class BulletinSystem
     }
 
 
+    /**
+     * func prints all the accounts.
+     * An account actually is a name,
+     * and the string of the UnduableStringBuilder.
+     */
     private void printAllAccounts()
     {
         int numOfAccounts = this._Accounts.size();
