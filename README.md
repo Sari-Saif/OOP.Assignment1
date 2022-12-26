@@ -43,6 +43,12 @@ With this program you can preform the below:
 <img src="UML_Bulletin.png"/>
 </p>
 
+## **Install & Run:**
+````
+git clone https://github.com/SariSafe/OOP.Assignment1.git
+After clone need to open it by IDE and run the main... have fun !!!
+````
+
 
 
 
