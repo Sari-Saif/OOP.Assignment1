@@ -181,6 +181,9 @@ public class BulletinSystem
         return choice;
     }
 
+    /**
+     * function prints the bulletin string.
+     */
     private void viewBulletin()
     {
         System.out.println("Current state: " + this._current.get_usb());
