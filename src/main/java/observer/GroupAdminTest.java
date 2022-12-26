@@ -64,7 +64,28 @@ class GroupAdminTest {
     }
 
     @Test
-    void append() {
+    void append()
+    {
+        GroupAdmin leader = new GroupAdmin();
+        ConcreteMember new_solder = new ConcreteMember();
+        ConcreteMember new_solder1 = new ConcreteMember();
+        ConcreteMember new_solder0 = new ConcreteMember();
+
+        leader.register(new_solder);
+        leader.register(new_solder0);
+        leader.register(new_solder1);
+
+        leader.append("every one listen to me !! ");
+        assertEquals("every one listen to me !! ",new_solder.get_usb().toString());
+        assertEquals("every one listen to me !! ",new_solder0.get_usb().toString());
+        assertEquals("every one listen to me !! ",new_solder1.get_usb().toString());
+
+        String check = "to be or not to be ";
+        leader.append(check);
+        assertEquals("every one listen to me !! to be or not to be ",new_solder.get_usb().toString());
+        assertEquals("every one listen to me !! to be or not to be ",new_solder0.get_usb().toString());
+        assertEquals("every one listen to me !! to be or not to be ",new_solder1.get_usb().toString());
+
     }
 
     @Test
@@ -72,6 +93,11 @@ class GroupAdminTest {
     }
 
     @Test
-    void undo() {
+    void undo()
+    {
+
+
+
+
     }
 }

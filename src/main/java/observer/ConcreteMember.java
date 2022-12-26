@@ -13,7 +13,6 @@ public class ConcreteMember implements Member
     public void update(UndoableStringBuilder usb)
     {
         this._usb = usb;
-        System.out.println("updated");
     }
 
     public UndoableStringBuilder get_usb()
