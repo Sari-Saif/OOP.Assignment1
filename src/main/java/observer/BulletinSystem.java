@@ -289,7 +289,13 @@ public class BulletinSystem
         this._bulletin.register(this._Accounts.get(choice-1));
     }
 
-
+    /**
+     * function handler the unsubscribe operation
+     * of account to the bulletin.
+     * User asked to choose a number of account
+     * and when the number is legal, the
+     * right account will unregister.
+     */
     private void unsubscribeHandler()
     {
         int choice = 0;
