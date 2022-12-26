@@ -1,10 +1,10 @@
 package observer;
 
-public class Human extends ConcreteMember
+public class Account extends ConcreteMember
 {
     private String _name;
 
-    public Human(String name)
+    public Account(String name)
     {
         this._name = name;
     }
