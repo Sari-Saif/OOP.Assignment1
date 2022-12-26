@@ -1,10 +1,12 @@
-# OOP.Assignment1
+# Bulletin System
  
-In Our Assignment We Talk About  And Develop UndoStringBuilder :
-: [https://github.com/SariSafe/OOP_HW_00_ARIEL]()
 
-Here We Design And Implement Our Interfaces , General Program 
-Depending On Principal  Of Unique Design Pattern Observer....
+## This Assignment 01 :
+
+The Mission is to Extend the Functionality of UndoStringBuilder From [Assignment 00]([https://github.com/SariSafe/OOP_HW_00_ARIEL])
+
+
+
 
 ## Observer Design Pattern :
 ````
