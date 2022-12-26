@@ -255,7 +255,13 @@ public class BulletinSystem
         this._Accounts.remove(accountToDelete);
     }
 
-
+    /**
+     * function handler the subscribe operation
+     * of account to the bulletin.
+     * User asked to choose a number of account
+     * and when the number is legal, the
+     * right account will register.
+     */
     private void subscribeHandler()
     {
         int choice = 0;
