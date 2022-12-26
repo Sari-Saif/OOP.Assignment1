@@ -96,22 +96,53 @@ class GroupAdminTest
         leader.unregister(new_solder1);
         String check = "to be or not to be ";
         leader.append(check);
+
         assertEquals("every one listen to me !! to be or not to be ",new_solder.get_usb().toString());
         assertEquals("every one listen to me !! to be or not to be ",new_solder0.get_usb().toString());
-        assertNotEquals("every one listen to me !! to be or not to be ",new_solder1.get_usb().toString());
+        assertNotEquals("to me !! to be or not to be ",new_solder1.get_usb().toString());
 
     }
 
     @Test
-    void delete() {
+    void delete()
+    {
+        GroupAdmin leader = new GroupAdmin();
+        ConcreteMember new_solder = new ConcreteMember();
+        ConcreteMember new_solder1 = new ConcreteMember();
+        ConcreteMember new_solder0 = new ConcreteMember();
+
+        leader.register(new_solder);
+        leader.register(new_solder0);
+        leader.register(new_solder1);
+
+        leader.append("every one listen to me !! ");
+        assertEquals("every one listen to me !! ",new_solder.get_usb().toString());
+        assertEquals("every one listen to me !! ",new_solder0.get_usb().toString());
+        assertEquals("every one listen to me !! ",new_solder1.get_usb().toString());
+
+        leader.unregister(new_solder1);
+        String check = "to be or not to be ";
+        leader.append(check);
+        leader.unregister(new_solder);
+        leader.unregister(new_solder0);
+        leader.delete(0,16);
+        assertEquals("every one listen to me !! to be or not to be ",new_solder.get_usb().toString());
+        assertEquals("every one listen to me !! to be or not to be ",new_solder0.get_usb().toString());
+        assertEquals("every one listen to me !! ",new_solder1.get_usb().toString());
+
+
     }
 
     @Test
     void undo()
     {
 
-
-
-
+        GroupAdmin admin= new GroupAdmin();
+        ConcreteMember member_isalive = new ConcreteMember();
+        admin.register(member_isalive);
+        admin.append("hi ") ;
+        admin.append("nanana");
+        admin.undo();
+        assertTrue("hi ".equals(member_isalive.get_usb().toString()));
     }
 }
