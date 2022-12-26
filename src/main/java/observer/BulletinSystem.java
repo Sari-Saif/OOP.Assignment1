@@ -64,7 +64,7 @@ public class BulletinSystem
                     // TODO
                     break;
                 case SUBSCRIBE:
-                    // TODO
+                    subscribeHandler();
                     break;
                 case UNSUBSCRIBE:
                     // TODO
@@ -189,9 +189,38 @@ public class BulletinSystem
         System.out.println("Your account was created");
     }
 
+
+    private void subscribeHandler()
+    {
+        int choice = 0;
+        int numOfAccounts = this._Accounts.size();
+
+        if(numOfAccounts == 0)
+        {
+            System.out.println("No accounts to subscibe...");
+        }
+
+        printAllAccounts();
+        do
+        {
+            System.out.print("Enter Account number to subscribe: ");
+            choice = this._sc.nextInt();
+            this._sc.nextLine();
+
+            if(choice < 0 || choice > numOfAccounts)
+            {
+                System.out.println("Invalid account... try again!");
+            }
+        }while (choice < 0 || choice > numOfAccounts);
+
+        this._bulletin.register(this._Accounts.get(choice-1));
+    }
+
+
     private void printAllAccounts()
     {
-        for(int i = 0; i < this._Accounts.size(); i++)
+        int numOfAccounts = this._Accounts.size();
+        for(int i = 0; i < numOfAccounts; i++)
         {
             Account curr = this._Accounts.get(i);
             System.out.println((i+1) + ". " + curr.get_name() + ": " + curr.get_usb());
