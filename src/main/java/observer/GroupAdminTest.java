@@ -33,8 +33,6 @@ class GroupAdminTest {
       ConcreteMember member1 = new ConcreteMember();;
       new_admin.append(" boker tov ");
       assertFalse(member0.get_usb().toString().equals(member1.get_usb()));
-
-
     }
 
     @Test
@@ -42,30 +40,27 @@ class GroupAdminTest {
     {
         GroupAdmin ga = new GroupAdmin();
         ConcreteMember guest_0 = new ConcreteMember();
-        ConcreteMember guest_1 = new ConcreteMember();
-        ConcreteMember guest_2 = new ConcreteMember();
 
         ga.register(guest_0);
-        ga.register(guest_1);
-        ga.register(guest_2);
-
         ga.append("heyyyyyyyyyyyyyyy");
 
-        System.out.println(guest_0.get_usb());
-        System.out.println(guest_1.get_usb());
-        System.out.println(guest_2.get_usb());
-
         ga.unregister(guest_0);
-        ga.unregister(guest_2);
         ga.append("1");
-
-       // assertFalse(,guest_0.get_usb().toString());
-        System.out.println(guest_1.get_usb());
-        System.out.println(guest_2.get_usb());
+        assertNotEquals("heyyyyyyyyyyyyyyy1",guest_0.get_usb());
     }
 
     @Test
-    void insert() {
+    void insert()
+    {
+
+
+
+
+
+
+
+
+
     }
 
     @Test
