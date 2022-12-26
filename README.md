@@ -18,7 +18,8 @@ The stream nomenclature alludes to a physical setup where the observers are phys
 
 ````
 ## UML:
-![Screenshot 2022-12-26 135113](https://user-images.githubusercontent.com/98646866/209545886-f5bf854e-1db8-435f-b937-177d442dd1dc.png)
+![UML_Bulletin](https://user-images.githubusercontent.com/98646866/209549218-75eac602-6b5e-47c9-a526-1eb6f593878c.png)
+
  
 Asked To Implement Tow Interfaces, We will add an option to organize a group of recipients of updates on the status of
 UndoableStringBuilder and send all updates to it in real time.
