@@ -30,6 +30,7 @@ public class BulletinSystem
 
     private ConcreteMember _current;
 
+
     /**
      * C'TOR
      */
@@ -42,6 +43,7 @@ public class BulletinSystem
         this._current = new ConcreteMember();
         this._bulletin.register(this._current);
     }
+
 
     /**
      * This is the main loop of the sysrem.
@@ -87,6 +89,7 @@ public class BulletinSystem
         }while(choice != EXIT);
     }
 
+
     /**
      * prints the main menu and ask
      * user to choose an option
@@ -119,6 +122,7 @@ public class BulletinSystem
 
         return choice;
     }
+
 
     /**
      * func handler the changing of bulletin.
@@ -159,6 +163,7 @@ public class BulletinSystem
         }
     }
 
+
     /**
      * function represent the 4 options of
      * changing buletin, and ask user to
@@ -181,6 +186,7 @@ public class BulletinSystem
         return choice;
     }
 
+
     /**
      * function prints the bulletin string.
      */
@@ -188,6 +194,7 @@ public class BulletinSystem
     {
         System.out.println("Current state: " + this._current.get_usb());
     }
+
 
     /**
      * function create new account,
@@ -219,6 +226,7 @@ public class BulletinSystem
 
         System.out.println("Your account was created");
     }
+
 
     /**
      * function ask user to choose an older account,
@@ -255,6 +263,7 @@ public class BulletinSystem
         this._Accounts.remove(accountToDelete);
     }
 
+
     /**
      * function handler the subscribe operation
      * of account to the bulletin.
@@ -288,6 +297,7 @@ public class BulletinSystem
 
         this._bulletin.register(this._Accounts.get(choice-1));
     }
+
 
     /**
      * function handler the unsubscribe operation
