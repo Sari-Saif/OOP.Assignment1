@@ -17,11 +17,15 @@ public class BulletinSystem
     private GroupAdmin _bulletin;
     private ArrayList<ConcreteMember> _people;
 
+    private ConcreteMember _current;
+
     BulletinSystem()
     {
         this._sc = new Scanner(System.in);
         this._bulletin = new GroupAdmin();
         this._people = new ArrayList<ConcreteMember>();
+        this._current = new ConcreteMember();
+        this._bulletin.register(this._current);
     }
 
     public void start()
@@ -36,10 +40,10 @@ public class BulletinSystem
             switch (choice)
             {
                 case CHANGE_BULLETIN:
-                    // TODO
+                    changeBulletinHandler();
                     break;
                 case VIEW_BULLETIN:
-                    // TODO
+                    viewBulletin();
                     break;
                 case CREATE_ACCOUNT:
                     // TODO
@@ -90,5 +94,16 @@ public class BulletinSystem
         }while(choice < 1 || choice > 8);
 
         return choice;
+    }
+
+
+    private void changeBulletinHandler()
+    {
+        // TODO: main for insert, append, delete and undo.
+    }
+
+    private void viewBulletin()
+    {
+        System.out.println("Current state: " + this._current.get_usb());
     }
 }
