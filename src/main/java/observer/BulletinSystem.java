@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class BulletinSystem
 {
+    // Main Menu options
     private final int CHANGE_BULLETIN = 1;
     private final int VIEW_BULLETIN = 2;
     private final int CREATE_ACCOUNT = 3;
@@ -13,6 +14,13 @@ public class BulletinSystem
     private final int UNSUBSCRIBE = 6;
     private final int PRINT_ACCOUNTS = 7;
     private final int EXIT = 8;
+
+    // Change bulletin options
+    private final int INSERT = 1;
+    private final int APPEND = 2;
+    private final int DELETE = 3;
+    private final int UNDO = 4;
+
     private Scanner _sc;
     private GroupAdmin _bulletin;
     private ArrayList<ConcreteMember> _people;
@@ -103,17 +111,27 @@ public class BulletinSystem
 
         switch (choice)
         {
-            case 1:
-                // TODO: insert
+            case INSERT:
+                System.out.print("Enter offset of insertion: ");
+                int offset = this._sc.nextInt();
+                this._sc.nextLine(); // clean the buffer
+                System.out.print("Enter string to insertion: ");
+                this._bulletin.insert(offset, this._sc.nextLine());
                 break;
-            case 2:
+            case APPEND:
                 System.out.print("Enter string to append: ");
                 this._bulletin.append(this._sc.nextLine());
                 break;
-            case 3:
-                // TODO: Delete
+            case DELETE:
+                System.out.print("Enter Start index to delete from: ");
+                int start = this._sc.nextInt();
+                this._sc.nextLine(); // clean the buffer
+                System.out.print("Enter End index: ");
+                int end = this._sc.nextInt();
+                this._sc.nextLine(); // clean the buffer
+                this._bulletin.delete(start, end);
                 break;
-            case 4:
+            case UNDO:
                 this._bulletin.undo();
                 break;
             default:
