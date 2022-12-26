@@ -1,5 +1,8 @@
 # Bulletin System
- 
+ <p align="center">
+<img src="photo.jpeg" width="30%"/>
+</p>
+
 
 ## Assignment 01
 
@@ -23,11 +26,6 @@ There are tow links we used to understand the Observer Design Pattern:
 - [YouTube](https://www.youtube.com/watch?v=_BpmfnqjgzQ)
 
 ## System Review:
-<p align="center">
-<img src="photo.jpeg" width="30%"/>
-</p>
-
-
 The program have a few abilities :
 1. Change Bulletin
 2. View Bulletin
