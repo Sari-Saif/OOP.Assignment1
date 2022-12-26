@@ -25,7 +25,7 @@ public class BulletinSystem
 
     private Scanner _sc;
     private GroupAdmin _bulletin;
-    private ArrayList<ConcreteMember> _people;
+    private ArrayList<Account> _Accounts;
     private Set<String> _accountNames;
 
     private ConcreteMember _current;
@@ -34,7 +34,7 @@ public class BulletinSystem
     {
         this._sc = new Scanner(System.in);
         this._bulletin = new GroupAdmin();
-        this._people = new ArrayList<ConcreteMember>();
+        this._Accounts = new ArrayList<Account>();
         this._accountNames = new HashSet<String>();
         this._current = new ConcreteMember();
         this._bulletin.register(this._current);
@@ -70,7 +70,7 @@ public class BulletinSystem
                     // TODO
                     break;
                 case PRINT_ACCOUNTS:
-                    // TODO
+                    printAllAccounts();
                     break;
                 case EXIT:
                     System.out.println("Bye bye :)");
@@ -184,8 +184,17 @@ public class BulletinSystem
         while(tryAgain);
 
         this._accountNames.add(name);
-        this._people.add(new Account(name));
+        this._Accounts.add(new Account(name));
 
         System.out.println("Your account was created");
+    }
+
+    private void printAllAccounts()
+    {
+        for(int i = 0; i < this._Accounts.size(); i++)
+        {
+            Account curr = this._Accounts.get(i);
+            System.out.println((i+1) + ". " + curr.get_name() + ": " + curr.get_usb());
+        }
     }
 }
