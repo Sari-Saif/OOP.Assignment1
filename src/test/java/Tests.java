@@ -36,7 +36,7 @@ public class Tests {
         logger.info(() -> JvmUtilities.jvmInfo());
     }
     @Test
-    public void ConcreateMember_test()
+    public void ConcreteMember_test()
     {
 
         UndoableStringBuilder str = new UndoableStringBuilder();
