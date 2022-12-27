@@ -68,12 +68,12 @@ class GroupAdminTest
 
 
         String check = " soldier number one died !!! ";
-        leader.insert(31,check);
         leader.unregister(new_solder1);
+        leader.insert(31,check);
 
         assertEquals("every one to gather around me ! soldier number one died !!! !",new_solder.get_usb().toString());
         assertEquals("every one to gather around me ! soldier number one died !!! !",new_solder0.get_usb().toString());
-        assertNotEquals("every one to gather around me !!",new_solder1.get_usb().toString());
+        assertNotEquals("every one to gather around me ! soldier number one died !!! !",new_solder1.get_usb().toString());
     }
 
     @Test
