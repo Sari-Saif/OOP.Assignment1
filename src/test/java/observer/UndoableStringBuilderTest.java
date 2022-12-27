@@ -8,6 +8,7 @@ class UndoableStringBuilderTest
     @Test
     void append()
     {
+
         UndoableStringBuilder usb = new UndoableStringBuilder();
         String check = "to be or not to be ";
         usb.append(check);
