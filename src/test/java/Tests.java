@@ -1,10 +1,12 @@
 import observer.ConcreteMember;
 import observer.GroupAdmin;
+import observer.Member;
 import observer.UndoableStringBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class Tests {
@@ -90,4 +92,36 @@ public class Tests {
 
         // remember: we want more good runtime than memory
     }
+    @Test
+    public void GroupAdmin_test()
+    {
+
+        GroupAdmin admin = new GroupAdmin();
+        ArrayList<Member> members_list = new ArrayList<>();
+        for (int i = 0 ; i< 1000 ; i++)
+        {
+            ConcreteMember member = new ConcreteMember();
+            admin.register(member);
+            members_list.add(member);
+        }
+        admin.append(" WOW how many members follow me ?!!");
+
+        logger.info(()->JvmUtilities.objectFootprint(admin));
+        logger.info(()->JvmUtilities.objectTotalSize(admin));
+
+        for (int i = 0 ; i< 1000 ; i++)
+        {
+
+            admin.unregister(members_list.get(i));
+        }
+
+        logger.info(()->JvmUtilities.objectFootprint(admin));
+        logger.info(()->JvmUtilities.objectTotalSize(admin));
+
+
+        logger.info(() -> JvmUtilities.jvmInfo());
+
+        // remember: we want more good runtime than memory
+    }
+
 }
